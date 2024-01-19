@@ -1,8 +1,6 @@
 ﻿using APIWithRazorViewService.Models;
 using APIWithRazorViewService.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,10 +26,14 @@ namespace APIWithRazorViewService.Controllers
             try
             {
                 var fruits = await _httpClient.GetFromJsonAsync<Fruit[]>("/api/fruit/all");
-                var random = new Random().Next(0, fruits.Length);
-                return await _viewRenderService.RenderToStringAsync("Fruits", fruits[random]);
+                if (fruits != null)
+                {
+                    var random = new Random().Next(0, fruits.Length);
+                    return await _viewRenderService.RenderToStringAsync("Fruits", fruits[random]);
+                }
+                return "No fruits found";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return ex.Message;
             }
