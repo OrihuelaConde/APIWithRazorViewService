@@ -1,0 +1,86 @@
+﻿@model APIWithRazorViewService.Models.Fruit
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fruits</title>
+</head>
+<body>
+    <div>
+        <h2>Fruit</h2>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Family)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Family)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Order)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Order)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Genus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Genus)
+            </dd>
+        </dl>
+        <h4>Nutritions</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nutritions.Calories)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nutritions.Calories)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nutritions.Fat)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nutritions.Fat)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nutritions.Sugar)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nutritions.Sugar)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nutritions.Carbohydrates)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nutritions.Carbohydrates)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nutritions.Protein)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nutritions.Protein)
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>
